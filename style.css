@@ -1,0 +1,57 @@
+/*
+ * Styles
+ * @author May Allidem <hola@mayallidem.com> || @mayallidem
+ */
+
+@keyframes ballRotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+@-webkit-keyframes ballRotate {
+    from { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes ballRotate {
+    from { -moz-transform: rotate(0deg); }
+    to   { -moz-transform: rotate(360deg); }
+}
+
+.ball, .grp-ball {
+	-webkit-border-radius: 50px;
+	   -moz-border-radius: 50px;
+	        border-radius: 50px;
+}
+.grp-ball {
+	position: relative;
+	width: 70px; height: 70px;
+	margin: 10px auto;
+	-webkit-transform: rotate(26deg);
+	   -moz-transform: rotate(26deg);
+	        transform: rotate(26deg);
+}
+.ball { position: absolute; display: block; }
+	.ball-l {
+		top: 12px; left: 12px;
+		width: 46px; height: 46px;
+		background: rgb(68, 146, 0);
+	}
+	.ball-s {
+		width: 15px; height: 15px;
+		background: rgb(104, 190, 20);
+	    opacity: 1;				    
+	}
+	.grp-ball:hover .ball-s {
+		-webkit-animation: ballRotate .9s linear infinite;
+	       -moz-animation: ballRotate .9s linear infinite;
+	            animation: ballRotate .9s linear infinite;
+	    -webkit-transform-origin:30px -20px;
+	       -moz-transform-origin:30px -20px;
+	            transform-origin:30px -20px;
+	    opacity: 0;
+	}
+	.ball-s, .grp-ball:hover .ball-s {
+		bottom: 0px; left: 6px;
+		-webkit-transition: opacity 1s linear;
+		   -moz-transition: opacity 1s linear;
+	            transition: opacity 1s linear;
+	}
